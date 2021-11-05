@@ -18,8 +18,9 @@ ul.bullet {
 	border:1px solid #999;
 	border-radius:10px;
 	width:300px;
+	background:url('/wp_ch3/images/back2.gif') 0 bottom no-repeat;
+	background-color:#ddd;
 	
-	background:url('/wp_ch3/images/back2.gif') 0 bottom no-repeat
 }
 
 ul.bullet li {
@@ -33,11 +34,12 @@ ul.bullet li {
 	
 }
 
+
 </style>
 </head>
 
 <body>
-<ul  class="bullet">
+<ul  class="bullet" style="position:absolute; z-index:100;" >
     <li> 1. 리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
     <li> 2. 리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
     <li> 3. 리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
@@ -45,7 +47,10 @@ ul.bullet li {
     <li> 5. 리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
     <li> 6. 리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
 </ul>
+<div "style="z-index:1000; position:absolute; left:100px; top:100px; width:200px; height:100px; background-color:#eee;">
 
+	<p>박스입니다<p>
+</div>
 
 </body>
 </html>
