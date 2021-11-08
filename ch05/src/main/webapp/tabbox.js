@@ -15,16 +15,13 @@ var tabBox = {
 		// select
 		this.className = "selected";
 	},
-	 {
+		onWindowLoad: function() {
 		var divTabBox = document.getElementsByClassName("tab-box")[0];
 		var ul = divTabBox.childNodes[1];
 
-		console.log(this);
-	},
-	onWindowLoad: function() {
 		var liTabs = ul.getElementsByTagName("li");
-		for (var i = 0; i < liTabs.length; i++) {
+		for(var i = 0; i < liTabs.length; i++) {
 			liTabs[i].addEventListener("click", this.onTabClicked);
-		}
+		}	
 	}
 }
