@@ -21,7 +21,7 @@ o1.info();
 
 // MyObject 객체 생성2
 var o2 = new MyObject("마이콜",20);
-o.info();
+o2.info();
 
 // 오버라이딩
 o2.info = function(){
