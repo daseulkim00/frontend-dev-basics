@@ -25,7 +25,11 @@ console.log("1" + 1);
 // 1. 타입의 동일성
 // 2. 값의 동일성 또는 객체의 도일성
 // 3. 형변환
+console.log("===========oo=========")
 console.log("2" === 2);
 console.log(true === 1);
 console.log(2 === 4);
 console.log(new Number(4) === new Number(4));
+
+
+
