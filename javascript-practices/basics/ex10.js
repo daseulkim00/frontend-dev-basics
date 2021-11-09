@@ -12,7 +12,7 @@ console.log(typeof(a1), a1 instanceof Array, a1.length);
 var a2 = new Array(10);
 a2[0] = 0;
 a2[5] = 5;
-a2[10] = 10;
+a2[10] = 10;   //index 10의 자리에 element 10이 들어간다.
 a2[20] = 20;
 console.log(a2[0],a2[1],a2.length); // 배열 요소에 값을 지정안하면 undefined 
 
