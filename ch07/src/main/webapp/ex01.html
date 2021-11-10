@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- 개별 소스 버전(서비스 서버 호스팅) -->
+<!-- <script type="text/javascript" src="./jquery/jquery-3.6.0.js"></script> -->
+
+<!-- 압축 버전(서비스 서버 호스팅) -->
+<!-- <script type="text/javascript" src="./jquery/jquery-3.6.0.min.js"></script> -->
+
+<!-- 압축 버전(CDN) -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<script>
+	var $obj = jQuery();
+	console.log(typeof(jQuery), typeof($obj), $obj.jquery);   // console: function object 3.6.0
+	
+	var $obj2 = $();
+	console.log(typeof($), typeof($obj2), $obj2.jquery);   
+</script>
+</head>
+<body>
+
+	<h1>jQuery 로딩</h1>
+
+</body>
+</html>
+ 
