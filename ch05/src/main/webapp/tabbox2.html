@@ -4,9 +4,20 @@
 <meta charset="utf-8">
 <title>리스트를 이용한 메뉴 만들기</title>
 <style type="text/css">
-*		{ margin:0; padding:0 }
-body	{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
-ul, ol	{ list-style-type: none }
+* {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font-family: '맑은 고딕' 돋움;
+	font-size: 0.75em;
+	color: #333
+}
+
+ul, ol {
+	list-style-type: none
+}
 
 .tab-box {
 	width: 520px;
@@ -14,7 +25,7 @@ ul, ol	{ list-style-type: none }
 }
 
 .tab-box ul {
-	height: 24px; 
+	height: 24px;
 }
 
 .tab-box li {
@@ -42,48 +53,49 @@ ul, ol	{ list-style-type: none }
 }
 </style>
 <script>
-// DOM Level 1 Event 처리: HTML element의 event 속성에 자바스크립트 코드를 사용하는 방법
-// 2) JavaScript Code(DOM API) 로만 작성하기
-var onTabClicked = function(){
-	console.log("click!!!-" + this.innerText);   // this 적으니깐 몇번째 클릭한지 볼 수 있음
-	
-	// unselect
-	var lisSelected = document.getElementByClassName("selected");
-	(lisSelected.length === 1) && (lisSelected[0].className = '');
-	
-	// select
-	this.className = "selected";   // 클릭하니 색상변경된다
-	
-}
-window.onload = function(){
-	console.log("DOM loaded!");
-	var divTabBox = document.getElementsByClassName("tab-box")[0];
-	console.log(divTabBox.childNodes);
-	
-	var ul = divTabBox.childNodes[1];
-	console.log(ul);
-	
-	var liTabs = ul.getElementsByTagName('li');
-	console.log(liTabs);
-	
-	for(var i = 0; i <liTabs.length; i++){
-		liTabs[i].onclick = onTabClicked;
+	// DOM Level 1 Event 처리: HTML element의 event 속성에 자바스크립트 코드를 사용하는 방법
+
+	// 2) JavaScript Code(DOM API) 로만 작성하기
+
+	var onTabClicked = function() {
+		console.log("click!!!-" + this.innerText);
+
+		// unselect
+		var lisSelected = document.getElementsByClassName("selected");
+		(lisSelected.length === 1) && (lisSelected[0].className = ''); // 클릭하면 select가 남으니깐 이것포함 selecte뒤에 값이 없을때 선택안된다.
+
+		// select
+		this.className = "selected";
 	}
-}
+
+	window.onload = function() {
+		console.log("DOM loaded!");
+
+		var divTabBox = document.getElementsByClassName("tab-box")[0];
+		console.log(divTabBox.childNodes);
+
+		var ul = divTabBox.childNodes[1];
+		console.log(ul);
+
+		var liTabs = ul.getElementsByTagName("li");
+		console.log(liTabs);
+                            
+		for (var i = 0; i < liTabs.length; i++) {  // length:5고 index는 4까지 
+			liTabs[i].onclick = onTabClicked;      // 0-4 까지 검색해서 내가 select한게 뭔지 색깔바꿔주고 누를때마다 for문 돌아감
+		}
+	}
 </script>
 </head>
 <body>
-<div class="tab-box">
-	<ul>
-        <li>메뉴 5</li>
-        <li>메뉴 4</li>
-        <li>메뉴 3</li>
-        <li>메뉴 2</li>
-        <li>메뉴 1</li>
-    </ul>
-    <div>
-    	탭뷰입니다.
-    </div>
-</div>    
+	<div class="tab-box">
+		<ul>
+			<li>메뉴 5</li>
+			<li>메뉴 4</li>
+			<li>메뉴 3</li>
+			<li>메뉴 2</li>
+			<li>메뉴 1</li>
+		</ul>
+		<div>탭뷰입니다.</div>
+	</div>
 </body>
 </html>

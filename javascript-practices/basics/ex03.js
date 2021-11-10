@@ -29,7 +29,7 @@ console.log("===========oo=========")
 console.log("2" === 2);
 console.log(true === 1);
 console.log(2 === 4);
-console.log(new Number(4) === new Number(4));
+console.log(new Number(4) === new Number(4));   // new 해서 생각 /객체 1, 2으로 생각
 
 
 

@@ -8,10 +8,10 @@ window.addEventListener("load", function () {
 	var h3Element = document.createElement("h3");
 	var textNode = document.createTextNode("Hello DOM");
 	
-	h3Element.append(textNode);
-	
+	h3Element.append(textNode);   //append() - 컨텐츠를 선택된 요소 내부의 끝 부분에서 삽입
+
 	setTimeout(function(){
-		document.body.appendChild(h3Element);
+		document.body.appendChild(h3Element);  // body의 젤밑에 생김
 	}, 3000);
 });
 </script>

@@ -8,18 +8,18 @@
     - 만일, var 키워드 없이 함수안에서 변수를 정의하게 되면 전역 범위를 가지게 된다.(Hoisting)
 3.  ES6 이후
     - 새롭게 Block SScope이 생기게 두 키워드를 지원한다.
-    - let : 변수
-    - const : 상수
+    - let : 변수      재선언이 안된다
+    - const : 상수    재선언,재할당이안된다(이걸많이사용함)
 
 4. const/let 만 사용하고 반드시 붙히자.
 */
 
 var i = 10
 
-var f = function(){
+var f = function(){         
     var i = 20;
     j = 100;
-    console.log(i);
+    console.log(i); //결과 20
     i = j -1;
 }
 
@@ -27,14 +27,15 @@ var f = function(){
     let x = 1000000;
     const PI = 3.14;
     x = 100;
-    // 상수이기 때문에 에러
-    // PI = 0;
-
-    
+    // PI = 0; // const 재할당 안되기 때문에 
+    // 변수선언에 기본적으로는 const 를 사용해야하고 재할당을 해야하는 경우에는 let을 사용하는 게 좋다
+    // 재할당 : const PI = 0; 아니고 PI =0; 
 }
+
 // error: 접근이 안됨
 // console.log(x);
 
-f();
-console.log(i);
-console.log(j);
+
+f();  // f 함수 초기화 시켜줘서 var i =20; 은 초기화 되어서 i 값이 10 이나온다.  (이거 안들고오면 밑에 오류뜸 )
+console.log(i); // 10
+console.log(j); // 100
