@@ -19,6 +19,7 @@
 
 		<!-- StringHttpMessageConverter -->
 		<mvc:message-converters>
+		<!-- html(text) messate converter -->
 			<bean
 				class="org.springframework.http.converter.StringHttpMessageConverter">
 				<property name="supportedMediaTypes">
@@ -27,7 +28,35 @@
 					</list>
 				</property>
 			</bean>
-
+			<!-- XML messate converter -->
+			
+			<!-- 
+			1. Mashalling
+				: 데이터(Object)를 xml로 만드는것
+			2. Unmashalling
+			    :xml 데이터를 특정 데이터 형태(Object)로 만드는것
+			3. 하는 방법
+			 1) OXM(Object XML Mapping)
+			 	: XML 데이터와 객체를 매핑
+			 	: MarshallingHttpMessageConverter
+			 
+			 2) JAXB(Java Architecture for XML Binding)
+			 	:OXM을 쉽게 도와주는 Tool
+			 	: 마살링/ 언마살링을 Annotation 기반으로 한다.
+			 	:JAXBAnnotation(@XmlElememtRoot)를 사용해서 직관적 매핑
+			 	:Jaxb2RootElementHttpMessageConverter
+			
+			 -->
+			 <bean
+				class="org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>application/xml; charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+			
+		<!-- JSON(text) messate converter -->
 			<bean
 				class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
 				<property name="supportedMediaTypes">
