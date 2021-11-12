@@ -4,60 +4,61 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="response")
 public class XmlResult {
-	private String result; /* "success" or "fail" */
-	private GuestbookVo data;    /* if success, set */         // object 고정시켜놔야함 GuestbookVo로 바꿈
-	private String message; /* if fail, set */
+	private String result;       /* "success" or "fail" */
+	private GuestbookVo data;    /* if success, set */
+	private String message;      /* if fail, set */
 	
 	private XmlResult() {}
+
 	private XmlResult(GuestbookVo data) {
 		this.result = "success";
-		this.data = data;
+		this.data = data; 
 	}
 	
 	private XmlResult(String message) {
 		this.result = "fail";
-		this.message = message;
+		this.message = message; 
 	}
-	
-	public static XmlResult success(GuestbookVo data) {
-		return new XmlResult(data);
-	}
-	
-	public static XmlResult fail(GuestbookVo message) {
-		return new XmlResult(message);
-	} 
 	
 	public String getResult() {
 		return result;
 	}
+
 	public GuestbookVo getData() {
 		return data;
 	}
+
 	public String getMessage() {
 		return message;
 	}
 	
-	
 	public void setResult(String result) {
 		this.result = result;
 	}
+
 	public void setData(GuestbookVo data) {
 		this.data = data;
 	}
+
 	public void setMessage(String message) {
 		this.message = message;
 	}
 
-
-
+	public static XmlResult success(GuestbookVo data) {
+		return new XmlResult(data);
+	}
+	
+	public static XmlResult fail(String message) {
+		return new XmlResult(message);
+	}
+	
 	@XmlRootElement(name="data")
-	public static class GuestbookVo{
-		private Long no ;
-		private String name ;
-		private String password ;
+	public static class GuestbookVo {
+		private Long no;
+		private String name;
+		private String password;
 		private String regDate;
 		private String message;
-		
 		
 		public Long getNo() {
 			return no;
@@ -89,9 +90,5 @@ public class XmlResult {
 		public void setMessage(String message) {
 			this.message = message;
 		}
-		
-		
 	}
-	
-
 }

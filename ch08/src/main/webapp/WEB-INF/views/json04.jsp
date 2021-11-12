@@ -10,21 +10,27 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
 $(function(){
+	vo = {
+		name: "둘리",
+		password: "1234",
+		message: "ㅎㅇ"
+	};
+	
 	$("button").click(function(){
 		$.ajax({
-			url: "${pageContext.request.contextPath }/api/xml",
-			dataType: 'xml',
+			url: "${pageContext.request.contextPath }/api/post02",
+			async: true,
+			type: 'post',             // 요청 method
+			dataType: 'json',         // 받을 포맷
+			contentType: 'application/json',
+			data: JSON.stringify(vo),
 			success: function(response) {
-				// console.log(response);
-				var $data = $("data", response);
-				var $no = $("no", $data)
-				var $name = $("name", $data)
-				var $message = $("message", $data)
+				console.log(response);
 				
 				var html = "";
-				html += ("<h2>" + $no.text() + "</h2>");
-				html += ("<h3>" + $name.text() + "</h3>");
-				html += ("<h4>" + $message.text() + "</h4>");
+				html += ("<h2>" + response.data.no + "</h2>");
+				html += ("<h3>" + response.data.name + "</h3>");
+				html += ("<h4>" + response.data.message + "</h4>");
 				
 				$("#data").append(html);
 			}
@@ -34,9 +40,9 @@ $(function(){
 </script>
 </head>
 <body>
-	<h1>AJAX Test - XML Format Data</h1>
+	<h1>AJAX Test - JSON Format Data</h1>
 	
-	<button>데이터 가져오기</button>
+	<button>데이터 보내기(post, delete, put): json 포맷</button>
 	<div id="data"></div>
 </body>
 </html>

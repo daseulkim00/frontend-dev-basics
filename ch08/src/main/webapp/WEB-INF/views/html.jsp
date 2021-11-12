@@ -9,16 +9,15 @@
 <title>Insert title here</title>
 <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script>
-$(function () {
-	$("button").click(function () {
-		$("p").load("/ch08/api/html p");  
-	 // $("p").load("${pageContext.request.contextPath }/api/text");   제이쿼리가 아니다. 서버에서 바껴서 내려오는거다
+$(function(){
+	$("button").click(function(){
+		$("p").load("${pageContext.request.contextPath }/api/html p");
 	});
 });
 </script>
 </head>
 <body>
-	<h1>AJAX Test -  HTML Format Data</h1>
+	<h1>AJAX Test - HTML Format Data</h1>
 	
 	<button>변경</button>
 	<p>변경전</p>

@@ -11,15 +11,28 @@
 <script>
 $(function(){
 	$("button").click(function(){
-		$("p").load("${pageContext.request.contextPath }/api/text");
+		$.ajax({
+			url: "${pageContext.request.contextPath }/api/json",
+			async: true,
+			type: 'get',
+			dataType: 'json',
+			success: function(response) {
+				var html = "";
+				html += ("<h2>" + response.data.no + "</h2>");
+				html += ("<h3>" + response.data.name + "</h3>");
+				html += ("<h4>" + response.data.message + "</h4>");
+				
+				$("#data").append(html);
+			}
+		});
 	});
 });
 </script>
 </head>
 <body>
-	<h1>AJAX Test - Text Format Data</h1>
+	<h1>AJAX Test - JSON Format Data</h1>
 	
-	<button>변경</button>
-	<p>변경전</p>
+	<button>데이터 가져오기</button>
+	<div id="data"></div>
 </body>
 </html>
