@@ -25,7 +25,7 @@ public class GuestbookController {
 		vo.setNo(1L);
 		vo.setPassword("");
 		
-		return JsonResult.success(vo);
+		return JsonResult.success(vo);  // jsonresult에 success 면 값을 들고 들어간다.
 	}
 	
 	@ResponseBody

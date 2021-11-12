@@ -11,6 +11,8 @@
 <script type="text/javascript" src="${pageContext.request.contextPath }/jquery/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/ejs/ejs.js"></script>
 <script>
+
+// 방법 1
 var render = function(vo) {
 	var html =
 		"<li data-no='" + vo.no + "'>" + 
@@ -22,13 +24,14 @@ var render = function(vo) {
 	return html;
 }
 
+// 방법 2
 var listItemEJS = new EJS({
 	url: '${pageContext.request.contextPath }/ejs/listitem-template.ejs'
 });
 
 $(function(){
 	$("#add-form").submit(function(event){
-		event.preventDefault();
+		event.preventDefault();    // 한 번 막고넘어감(링크) 
 		
 		vo = {};
 		
